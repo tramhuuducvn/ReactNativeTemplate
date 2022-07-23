@@ -1,17 +1,30 @@
-import { View, Text, Image } from 'react-native'
-import React from 'react'
+import { View, Text, Image, FlatList } from 'react-native'
+import React, { useEffect } from 'react'
 import styles from './styles'
-import { AngryEmoji } from '../../assets/gif'
+import Emojis from '../assets/Emojis';
+import EmojiButton from './EmojiButton';
 
 export default function ReactionPanel({_style}) {
 
+    useEffect(()=>{
+        console.log('ReactionPanel Mounted');
+
+        return ()=>{
+            console.log('ReactionPanel UnMounted');
+        }
+    }, [])
+
+    const renderEmoji = ({item})=>{
+        return <EmojiButton emoji={item.src}/>
+    }
+
     return (
-        <View style={[styles.container, _style]}>
-            <Text>ReactionPanel</Text>
-            <Image 
-                source={AngryEmoji}
-                style={{width: 70,height: 70}}
-            />
-        </View>
+        <FlatList
+            data={Emojis} 
+            keyExtractor={item => item.id}
+            renderItem={renderEmoji}
+            horizontal={true}
+            style={[styles.container, _style]}
+        />
     )
 }

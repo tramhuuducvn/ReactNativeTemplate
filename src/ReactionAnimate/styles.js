@@ -1,4 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+
+const height = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
@@ -31,10 +33,17 @@ const styles = StyleSheet.create({
     left: 20,
     backgroundColor: '#f00',
     padding: 10,
-    borderRadius: 30
+    borderRadius: 30,
+  },
+
+  dimBackground: {
+    position: 'absolute',
+    backgroundColor: '#00000000',
+    top: -height,
+    left: 0,
+    right: 0,
+    bottom: -height,
   }
 });
-
-
 
 export default styles;

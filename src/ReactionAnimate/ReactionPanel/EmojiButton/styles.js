@@ -1,13 +1,17 @@
 import { StyleSheet } from "react-native";
 
+const size = 60;
+
 const styles = StyleSheet.create({
-    container: {
+    containter: {
         backgroundColor: '#fff',
-        paddingHorizontal: 2,
-        borderRadius: 100,
-        position: 'absolute',
+        borderRadius: size/2,
+    },
+
+    emoji: {
+        width: size,
+        height: size,
     }
 });
-
 
 export default styles;
