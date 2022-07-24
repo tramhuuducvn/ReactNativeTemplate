@@ -21,11 +21,11 @@ const Emojis =  [
         src: LaughEmoji,
         name: 'laugh',
     }, 
-    {
-        id: 4,
-        src: CryEmoji,
-        name: 'cry',
-    }, 
+    // {
+    //     id: 4,
+    //     src: CryEmoji,
+    //     name: 'cry',
+    // }, 
     {
         id: 5,
         src: LikeEmoji,

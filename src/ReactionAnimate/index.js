@@ -9,7 +9,16 @@ const ReactionAnimate = () => {
   console.log('ReactionAnimate');
 
   const handleShowReactionPanel = ()=> {
-    setShowReactionPanel(prevState => !prevState);
+    // if(showReactionPanel){
+    //   setTimeout(()=>{
+    //     setShowReactionPanel(false);
+    //   }, 2000)
+    // }
+    // else {
+    //   setShowReactionPanel(true);
+    // }
+      setShowReactionPanel(prevState => !prevState);
+
   }
 
   return (
