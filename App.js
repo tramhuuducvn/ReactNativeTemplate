@@ -1,13 +1,13 @@
 import {Text, SafeAreaView, StyleSheet, View, ScrollView} from 'react-native';
 import React from 'react';
-import ReactionAnimate from './src/ReactionAnimate';
+import Reactions from './src/Reactions';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.root}>
       <ScrollView>
         <View style={styles.contentAbove} />
-        <ReactionAnimate />
+        <Reactions />
         <View style={styles.contentBelow} />
       </ScrollView>
     </SafeAreaView>

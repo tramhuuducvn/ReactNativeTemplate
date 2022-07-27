@@ -15,13 +15,13 @@ export default function ReactionPanel({_style}) {
           }).start();
     }
 
-    const fadeOut = ()=>{
-        Animated.timing(fadeAnim, {
-            toValue: 0,
-            duration: 3000,
-            useNativeDriver: true,
-          }).start();
-    }
+    // const fadeOut = ()=>{
+    //     Animated.timing(fadeAnim, {
+    //         toValue: 0,
+    //         duration: 3000,
+    //         useNativeDriver: true,
+    //       }).start();
+    // }
 
     useEffect(()=>{
         console.log('Re-Render');
