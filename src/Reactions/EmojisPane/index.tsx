@@ -1,24 +1,40 @@
-import { View, Text, Modal } from 'react-native'
-import React, { memo } from 'react'
-import styles from './styles'
+import { View, Text, Modal, TouchableOpacity } from 'react-native';
+import React, { forwardRef, memo, useImperativeHandle, useState } from 'react';
+import styles from './styles';
 
-interface Props{
-  isVisible: boolean,
-}
+const EmojisPane = (props: any, ref: any) => {
+  const [isVisible, setIsVisible] = useState(false);
 
-const EmojisPane = ({isVisible = false}: Props) => {
+  const showModal = ()=>{
+    setIsVisible(true);
+  }
 
+  const hideModal = ()=>{
+    setIsVisible(false);
+    console.log('Hide Emojis Pane');
+  }
+
+  useImperativeHandle(ref, ()=>({
+    show: showModal,
+    hide: hideModal,
+  }))
+
+  console.log('Emojis Pane Re-render', props);
+  
   return (
     <Modal
-      animationType='slide'
+      animationType='none'
       transparent={true}
       visible={isVisible}
     >
-      <View style={styles.rect}>
-    
-      </View>
+      <TouchableOpacity 
+        onPress={hideModal}
+        style={[styles.rect, props._style]}
+      >
+        <Text>Hide</Text>
+      </TouchableOpacity>
     </Modal>
   )
 }
 
-export default memo(EmojisPane);
+export default memo(forwardRef(EmojisPane));

@@ -1,19 +1,20 @@
 import { View, Text, Pressable, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import styles from './styles';
 import LikeIcon from './assets/svg/LikeIcon';
 import EmojisPane from './EmojisPane';
 
+
 export default function Reactions() {
   const [y, setY] = useState<any>(null);
-  const [showEmojisPane, setShowEmojisPane] = useState(false);
+  const emojisPaneRef = useRef<any>();
   const onPressReactions = ()=>{
     console.log('On press', y);
   }
 
   const onLongPressReactions = ()=>{
-    console.log('On long press', y);
-    setShowEmojisPane(true);
+    console.log('Show Emoji Pane', y);
+    emojisPaneRef?.current?.show();
   }
 
   const getY = (event)=>{
@@ -21,12 +22,14 @@ export default function Reactions() {
     setY(layout.pageY - layout.locationY);
   }
   
+  console.log('Screen re-render');
+  
   return (
     <>
       <View style={styles.root}>
           <View onTouchStart={getY}>
             <Pressable
-              onPress={onPressReactions}
+              // onPress={onPressReactions}
               onLongPress={onLongPressReactions}
               style={({pressed})=>[
                 pressed && styles.buttonPressed,
@@ -38,7 +41,7 @@ export default function Reactions() {
             </Pressable>
           </View>
       </View>
-      <EmojisPane isVisible={showEmojisPane} />
+      <EmojisPane ref={emojisPaneRef} _style={{top: y}}/>
     </>
   )
 }

@@ -4,7 +4,10 @@ const styles = StyleSheet.create({
     rect: {
         width: 100,
         height: 100,
-        backgroundColor: 'pink'
+        backgroundColor: 'red',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute'
     }
 })
 
