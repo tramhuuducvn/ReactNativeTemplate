@@ -1,10 +1,24 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, Modal } from 'react-native'
+import React, { memo } from 'react'
+import styles from './styles'
 
-export default function EmojisPane() {
+interface Props{
+  isVisible: boolean,
+}
+
+const EmojisPane = ({isVisible = false}: Props) => {
+
   return (
-    <View>
-      <Text>EmojisPane</Text>
-    </View>
+    <Modal
+      animationType='slide'
+      transparent={true}
+      visible={isVisible}
+    >
+      <View style={styles.rect}>
+    
+      </View>
+    </Modal>
   )
 }
+
+export default memo(EmojisPane);
