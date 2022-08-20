@@ -1,0 +1,4 @@
+1. Tóm tắt chức năng: cho phép người dùng chọn sử dụng nhiều biểu tượng cảm xúc cho bài post!
+
+Mô tả:
+    + 

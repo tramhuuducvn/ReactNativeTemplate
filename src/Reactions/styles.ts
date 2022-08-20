@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     
     text: {
         color: '#000',
+        marginHorizontal: 4
     },
 
     button: {
@@ -17,7 +18,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 8,
         borderRadius: 12,
-        
     },
 
     buttonPressed: {

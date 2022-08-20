@@ -26,15 +26,15 @@ const Emojis =  [
     //     src: CryEmoji,
     //     name: 'cry',
     // }, 
-    {
-        id: 5,
-        src: LikeEmoji,
-        name: 'like',
-    }, 
+    // {
+    //     id: 5,
+    //     src: LikeEmoji,
+    //     name: 'like',
+    // },
     {
         id: 6,
         src: HeartEmoji,
         name: 'heart',
     }] 
 
-export default Emojis
+export {Emojis, HeartEmoji}
