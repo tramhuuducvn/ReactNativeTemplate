@@ -7,6 +7,20 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     
+    reaction: {
+        position: 'absolute',
+    },
+    
+    contentAbove: {
+        width: '100%',
+        height: 500,
+    },
+
+    contentBelow: {
+        width: '100%',
+        height: 800,
+    },
+    
     text: {
         color: '#000',
         marginHorizontal: 4
@@ -22,7 +36,7 @@ const styles = StyleSheet.create({
 
     buttonPressed: {
         backgroundColor: '#00ffff77',
-    }
+    },
 });
 
 export default styles;

@@ -2,7 +2,7 @@ import { View, Text, Modal, TouchableOpacity, Pressable, FlatList } from 'react-
 import React, { forwardRef, memo, useImperativeHandle, useState } from 'react';
 import styles from './styles';
 import EmojiButton from './EmojiButton';
-import { Emojis, HeartEmoji } from '../assets/Emojis';
+import { Emojis } from '../assets/Emojis';
 
 const EmojisPane = (props: any, ref: any) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,12 +20,13 @@ const EmojisPane = (props: any, ref: any) => {
     show: showModal,
     hide: hideModal,
   }))
-
-  console.log('Emojis Pane Re-render', props);
   
-  const renderEmojiButton = (item) => {
+  const renderEmojiButton = (item: any) => {
     return <EmojiButton key={item.id} emoji={item} />
   }
+
+  console.log('Render Emoji Pane');
+  
 
   return (
     <Modal
